@@ -16,9 +16,18 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    localStorage.setItem('username', JSON.stringify(username));
-    localStorage.setItem('useremail', JSON.stringify(email));
-    console.log('Logged in successfully!');
+    try {
+      const response = await fetch(`api/v1/users/${username}`);
+      const data = await response.json();
+      if (response.ok) {
+        console.log(`${username} - Logged in successfully`);
+        localStorage.setItem('user', JSON.stringify(username));
+      } else {
+        console.log(data.message);
+      }
+    } catch (error) {
+      console.log('error');
+    }
   };
 
   return (
