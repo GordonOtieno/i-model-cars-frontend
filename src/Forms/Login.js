@@ -17,15 +17,11 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('api/v1/login', {
-        method: 'POST',
-        body: JSON.stringify({ username, email }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-
+      const response = await fetch(`api/v1/users/${username}`)
       const data = await response.json();
       if (response.ok) {
         console.log(`${username} - Logged in successfully`);
+        localStorage.setItem('user', JSON.stringify(username));
       } else {
         console.log(data.message);
       }
