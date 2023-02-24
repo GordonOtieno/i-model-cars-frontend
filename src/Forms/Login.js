@@ -16,30 +16,19 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch('api/v1/login', {
-        method: 'POST',
-        body: JSON.stringify({ username, email }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        console.log(`${username} - Logged in successfully`);
-      } else {
-        console.log(data.message);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    localStorage.setItem('username', JSON.stringify(username));
+    localStorage.setItem('useremail', JSON.stringify(email));
+    console.log('Logged in successfully!');
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>Log in</h1>
       <label htmlFor="username">
         <p>Name:</p>
         <input type="text" id="username" value={username} onChange={handleChangeUsername} />
       </label>
+      <br />
       <label htmlFor="email">
         <p>Email:</p>
         <input type="text" id="email" value={email} onChange={handleChangeEmail} />
