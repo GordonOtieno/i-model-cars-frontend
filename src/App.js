@@ -6,7 +6,7 @@ import Cars from './components/Cars/Cars';
 const App = () => (
   <Routes>
     <Route path="/" element={<Cars />} />
-    <Route path="/cars/" element={<Car />} />
+    <Route path="/cars/:id" element={<Car />} />
   </Routes>
 );
 
