@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Car from './components/Car/Car';
-import Cars from './components/Cars/Cars';
+import Main from './components/Main/Main';
+import Details from './components/Details/Details';
 
 const App = () => (
   <Routes>
-    <Route path="/" element={<Cars />} />
-    <Route path="/cars/:id" element={<Car />} />
+    <Route path="/" element={<Main />} />
+    <Route path="http://127.0.0.1:3000/api/v1/cars/:id" element={<Details />} />
   </Routes>
 );
 
