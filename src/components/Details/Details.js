@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import './Details.css';
 
 const Details = (props) => {
   const {
-    id,
     name,
     image,
     make,
@@ -14,12 +15,23 @@ const Details = (props) => {
     speed,
     color,
   } = props;
+  const { id } = useParams();
+
+  useEffect(() => {
+    // get cars from the api
+    // update cars state
+    axios.get(`http://127.0.0.1:3000/api/v1/cars/${id}`)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((response) => console.log(response));
+  }, []);
 
   return (
     <>
-      <div key={id} className="card">
+      <div className="card">
         <div className="cars-image">
-          <img src={image} alt={name} />
+          <img src={image.white} alt={name} />
           <p className="cars-description">{description}</p>
         </div>
         <div className="car-props">
@@ -44,7 +56,6 @@ const Details = (props) => {
 };
 
 Details.propTypes = {
-  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
