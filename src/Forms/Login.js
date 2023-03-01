@@ -17,13 +17,17 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`api/v1/users/${username}`);
-      const data = await response.json();
-      if (response.ok) {
-        console.log(`${username} - Logged in successfully`);
-        localStorage.setItem('user', JSON.stringify(username));
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (!user || user !== username) {
+        alert(`User ${username} not found`);
+        window.location.href = '/SingUp';
       } else {
-        console.log(data.message);
+        const response = await fetch(`api/v1/users/${username}`);
+        const data = await response.json();
+        if (data.ok) {
+          alert(`${username} - Logged in successfully`);
+          localStorage.setItem('user', JSON.stringify(username));
+        }
       }
     } catch (error) {
       console.log('error');
