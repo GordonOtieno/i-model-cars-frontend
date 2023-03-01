@@ -34,21 +34,25 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={handleUsernameChange}
-      />
+      <label htmlFor="username">
+        Username
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={handleUsernameChange}
+        />
+      </label>
 
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={handleEmailChange}
-      />
+      <label htmlFor="email">
+        Email
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={handleEmailChange}
+        />
+      </label>
 
       <button type="submit" className="submit-btn">Submit</button>
     </form>
