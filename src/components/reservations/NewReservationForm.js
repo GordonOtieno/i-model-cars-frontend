@@ -17,7 +17,7 @@ export default function NewReservationForm(props) {
   // Send the reservation details to the API
   const handleSubmit = (e) => {
     e.preventDefault();
-    createReservationAPI(reservation);
+    createReservationAPI(1, reservation);
   };
 
   // Update the state after each change in the fields values

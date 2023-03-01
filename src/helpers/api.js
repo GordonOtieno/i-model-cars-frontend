@@ -1,5 +1,5 @@
-export default function createReservationAPI(reservation) {
-  fetch('http://127.0.0.1:3000/api/v1/users/1/reservations', {
+export default function createReservationAPI(userID, reservation) {
+  fetch(`http://127.0.0.1:3000/api/v1/users/${userID}/reservations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
