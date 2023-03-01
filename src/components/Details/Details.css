@@ -5,6 +5,7 @@ body {
 
 .content {
   display: flex;
+
   /* display: grid;
   grid-template-columns: 100px repeat(3, 1fr );
   grid-template-rows: auto;
@@ -28,6 +29,7 @@ li {
   list-style-type: none;
   padding: 20px;
 }
+
 /* .content {
   grid-area: content;
 } */
@@ -49,7 +51,7 @@ ul {
   padding: 0;
 }
 
- img {
+img {
   width: 300px;
   height: 200px;
 }
@@ -60,13 +62,11 @@ ul {
 
 .car-props {
   text-align: center;
-} 
-
-.car-props>:nth-child(even) {
-  background-color: lightgray;
 }
 
-
+.car-props > :nth-child(even) {
+  background-color: lightgray;
+}
 
 .cars-name {
   font-size: 24px;
