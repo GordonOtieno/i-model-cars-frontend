@@ -27,8 +27,13 @@ const SignUpForm = () => {
     localStorage.setItem('email', newEmail);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Submitted: ${username}, ${email}`);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="username">Username</label>
       <input
         type="text"
@@ -44,6 +49,8 @@ const SignUpForm = () => {
         value={email}
         onChange={handleEmailChange}
       />
+
+      <button type="submit" className="submit-btn">Submit</button>
     </form>
   );
 };
