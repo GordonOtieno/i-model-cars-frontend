@@ -6,7 +6,7 @@ import Details from './components/Details/Details';
 const App = () => (
   <Routes>
     <Route path="/" element={<Main />} />
-    <Route path="http://127.0.0.1:3000/api/v1/cars/:id" element={<Details />} />
+    <Route path="/Details/:id" element={<Details />} />
   </Routes>
 );
 
