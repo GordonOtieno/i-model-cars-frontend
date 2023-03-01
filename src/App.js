@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NewReservationForm from './components/reservations/new';
+import NewReservationForm from './components/reservations/NewReservationForm';
 import SignUpForm from './components/SignUp/SignUp';
 
 const App = () => (

@@ -7,6 +7,7 @@ export default function NewReservationForm() {
         <input type="number" name="user_id" placeholder="car id" />
         <input type="text" name="date" placeholder="car id" />
         <input type="text" name="city" placeholder="car id" />
+        <input type="submit" value="Send" />
       </form>
     </div>
   );
