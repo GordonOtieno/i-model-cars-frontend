@@ -41,3 +41,17 @@ button {
 button:hover {
   background-color: #06c;
 }
+
+.submit-btn {
+  background-color: #0077cc;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #005ea8;
+}
