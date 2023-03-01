@@ -7,7 +7,7 @@ import SignUpForm from './components/SignUp/SignUp';
 const App = () => (
   <Routes>
     <Route path="/" element={<SignUpForm />} />
-    <Route path="" element={<Main />} />
+    <Route path="/Main" element={<Main />} />
     <Route path="http://127.0.0.1:3000/api/v1/cars/:id" element={<Details />} />
   </Routes>
 );
