@@ -2,56 +2,37 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
 }
 
 label {
-  font-size: 16px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-input {
-  width: 300px;
-  height: 40px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+input[type="text"],
+input[type="email"] {
   padding: 8px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-}
-
-input:focus {
-  outline: none;
-  border-color: #07f;
-}
-
-button {
-  width: 150px;
-  height: 40px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #07f;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #06c;
+  font-size: 1rem;
+  margin-top: 5px;
 }
 
 .submit-btn {
-  background-color: #07c;
-  color: #fff;
-  font-size: 16px;
-  padding: 10px 20px;
+  margin-top: 15px;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  background-color: #005ea8;
+  background-color: #0069d9;
 }
