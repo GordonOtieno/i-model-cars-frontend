@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
-// import { BiRightArrow } from 'react-icons/bi';
 import './Main.css';
 
 const Main = () => {
