@@ -3,7 +3,6 @@ body {
   box-sizing: border-box;
 }
 
-
 .app-title {
   margin-top: 50px;
   text-align: center;
@@ -37,7 +36,6 @@ body {
   align-items: center;
 }
 
-
 a {
   text-decoration: none;
 }
@@ -63,4 +61,3 @@ a {
   width: 100%;
   overflow: visible !important;
 }
-
