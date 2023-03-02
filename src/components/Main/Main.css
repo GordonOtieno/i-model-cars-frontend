@@ -1,0 +1,66 @@
+
+body {
+  box-sizing: border-box;
+}
+
+
+.app-title {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.app-msg {
+  font-style: italic;
+  text-align: center;
+}
+
+.cars-container {
+  display: grid;
+  grid-template-columns: repeat(var(--cars-per-row), 1fr);
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 20px;
+  align-items: center;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  color: #333;
+  justify-content: center;
+}
+
+.icon:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: visible !important;
+}
+
