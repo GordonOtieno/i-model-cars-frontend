@@ -7,7 +7,7 @@ import './Details.css';
 const Details = (props) => {
   const {
     name,
-    image,
+    images,
     make,
     type,
     description,
@@ -24,14 +24,14 @@ const Details = (props) => {
       .then((response) => {
         console.log(response.data);
       })
-      .catch((response) => console.log(response));
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <>
       <div className="card">
         <div className="cars-image">
-          <img src={image.white} alt={name} />
+          <img src={images} alt={name} />
           <p className="cars-description">{description}</p>
         </div>
         <div className="car-props">
@@ -57,7 +57,7 @@ const Details = (props) => {
 
 Details.propTypes = {
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  images: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   make: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
