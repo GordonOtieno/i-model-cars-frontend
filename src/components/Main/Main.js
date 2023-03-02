@@ -8,13 +8,13 @@ import './Main.css';
 
 const Main = () => {
   const [cars, setCars] = useState([]);
-  // let's fetch data from Api
+  // Fetch data from the localhost api
   useEffect(() => {
     axios.get('http://127.0.0.1:3000/api/v1/cars')
       .then((response) => {
         setCars(response.data);
       })
-      .catch((response) => console.log(response));
+      .catch((error) => console.log(error));
   }, []);
 
   return (
