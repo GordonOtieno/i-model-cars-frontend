@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import Main from './components/Main/Main';
 import Login from './Forms/Login';
 import SignUpForm from './components/SignUp/SignUp';
+import Details from './components/details/Details';
 import NewReservationForm from './components/reservations/NewReservationForm';
 import Reservations from './components/reservations/Reservations';
 import reservationReducer from './redux/reservationsSlice';
@@ -18,6 +19,7 @@ const App = () => (
   <Provider store={store}>
     <Routes>
       <Route path="/" element={<Main />} />
+      <Route path="/details/:id" element={<Details />} />
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<SignUpForm />} />
       <Route path="/reservations" element={<Reservations />} />
