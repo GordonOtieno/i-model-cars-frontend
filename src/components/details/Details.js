@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { AiOutlineSetting } from 'react-icons/ai';
+import { TfiArrowCircleRight } from 'react-icons/tfi';
+import { BiLeftArrow } from 'react-icons/bi';
 import './details.css';
 
 function Details() {
@@ -24,8 +27,16 @@ function Details() {
     <section>
       <div key={carDetails.id} className="card">
         <div className="cars-image">
-          <img src={carDetails.images.dark} alt={carDetails.name} />
+          <img
+            src={carDetails.images}
+            alt={carDetails.name}
+          />
           <p className="cars-description">{carDetails.description}</p>
+          <div className="configure">
+            <button type="button">
+              <BiLeftArrow />
+            </button>
+          </div>
         </div>
         <div className="car-props">
           <div className="cars-name">
@@ -39,17 +50,48 @@ function Details() {
               </i>
             </span>
           </div>
-          <div className="cars-make">{carDetails.make}</div>
-          <div className="cars-type">{carDetails.type}</div>
+          <div className="cars-make">
+            <span>
+              Make:
+              {' '}
+              {carDetails.make}
+            </span>
+          </div>
+          <div className="cars-type">
+            <span>
+              Type:
+              {' '}
+              {carDetails.type}
+            </span>
+          </div>
           <div className="cars-cost">
-            $
-            {carDetails.cost}
+            <span>
+              Cost:
+              {' '}
+              {carDetails.cost}
+            </span>
           </div>
-          <div className="cars-speed">{carDetails.speed}</div>
+          <div className="cars-speed">
+            <span>
+              Speed:
+              {' '}
+              {carDetails.speed}
+            </span>
+          </div>
           <div className="cars-color">
-            Color:
-            {carDetails.color}
+            <span>
+              Color:
+              {' '}
+              {carDetails.color}
+            </span>
           </div>
+          <Link to="/reservations/" className="configure">
+            <button type="button">
+              <AiOutlineSetting />
+              <span>Reserve</span>
+              <TfiArrowCircleRight />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
