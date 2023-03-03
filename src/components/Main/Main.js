@@ -36,7 +36,7 @@ const Main = () => {
             <div className="d-flex justify-content-between">
               {carGroup.map((car) => (
                 <div key={car.id} className="w-33">
-                  <Link to={`/Details/${car.id}`}>
+                  <Link to={`/details/${car.id}`}>
                     <img src={car.images.dark} alt={car.name} style={{ height: '200px', width: '300px' }} />
                   </Link>
                   <div className="car-info">
