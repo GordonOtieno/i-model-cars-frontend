@@ -37,7 +37,8 @@ const Main = () => {
               {carGroup.map((car) => (
                 <div key={car.id} className="w-33">
                   <Link to={`/details/${car.id}`}>
-                    <img src={car.images.dark} alt={car.name} style={{ height: '200px', width: '300px' }} />
+                    {/* <img src={car.images.dark} alt={car.name}
+                    style={{ height: '200px', width: '300px' }} /> */}
                   </Link>
                   <div className="car-info">
                     <h4>{car.name}</h4>
