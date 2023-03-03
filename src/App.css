@@ -150,11 +150,11 @@ div.mycard .myrow {
   background: var(--light);
   backdrop-filter: blur(3rem);
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
-  padding: 1.5rem 0.8rem;
+  padding: 1.5rem 5rem;
   border-radius: 15px;
   justify-content: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
 }
 
 .flex {
@@ -190,9 +190,9 @@ select {
 
 select,
 input:not([type="file"]) {
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid var(--grey);
-  padding: 0.2rem 1rem;
+  padding: 8px 1rem;
   margin: 8px 0;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -200,7 +200,7 @@ input:not([type="file"]) {
   background: var(--transparent);
   letter-spacing: 1px;
   width: 100%;
-  color: var(--light-dark);
+  
 }
 
 .margin {
@@ -208,4 +208,12 @@ input:not([type="file"]) {
 }
 .hero {
   color: var(--hero);
+
+}
+
+.input-div {
+  width: 100%;
+}
+.gap {
+  gap: 5rem;
 }

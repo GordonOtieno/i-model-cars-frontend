@@ -31,7 +31,6 @@ const AddCar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data);
     if (canBeSaved) {
       fetch('http://127.0.0.1:3000/api/v1/cars', {
         method: 'POST',
@@ -43,21 +42,14 @@ const AddCar = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log('Success:', data);
+          alert('Car was successfully created');
         })
         .catch((error) => {
           console.error('Error:', error);
+          alert('Woops! Something went wrong. Please check your inputs.');
         });
     }
   };
-  // if (canBeSaved) {
-  //   try {
-  //     await addCar(JSON.stringify(data)).unwrap();
-  //     console.log("car saved")
-  //     // navigate('/cars')
-  //   } catch (err) {
-  //     console.log('Failed to save the Cars:', err);
-  //   }
-  // }
 
   return (
     <Container>
