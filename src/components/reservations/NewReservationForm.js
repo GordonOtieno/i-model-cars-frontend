@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import createReservationAPI from '../../helpers/api';
+import { createReservationAPI } from '../../helpers/api';
 
 export default function NewReservationForm(props) {
   // Get the car
