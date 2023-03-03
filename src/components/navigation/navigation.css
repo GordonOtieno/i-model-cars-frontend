@@ -1,0 +1,55 @@
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  padding: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sidebar-header img {
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar-content {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.car-link {
+  color: #fff;
+  background-color: #88e62a;
+  padding: 10px;
+}
+
+.sidebar-content li {
+  list-style: none;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.sidebar-content a {
+  color: #333;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 200px;
+}
+
+#copyright {
+  font-size: 0.8rem;
+  padding: 8px;
+}
