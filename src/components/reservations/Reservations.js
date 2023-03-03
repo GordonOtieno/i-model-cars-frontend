@@ -15,19 +15,19 @@ export default function Reservations() {
       <h1>Your Reservations</h1>
       <section id="resevations-list">
         {reservations.map((reservation) => (
-          <div key={reservation.id} className="card">
+          <div key={reservation.id} className="mycard">
             <h2>
               Car Id:
               {reservation.car_id}
               {' This should be Care Name'}
             </h2>
-            <div className="card-footer">
-              <div className="row">
-                <img className="icon" src={locationIcon} alt="City name" />
+            <div className="mycard-footer">
+              <div className="myrow">
+                <img className="myicon" src={locationIcon} alt="City name" />
                 {reservation.city}
               </div>
-              <div className="row">
-                <img className="icon" src={calendarIcon} alt="Date" />
+              <div className="myrow">
+                <img className="myicon" src={calendarIcon} alt="Date" />
                 {reservation.date}
               </div>
             </div>

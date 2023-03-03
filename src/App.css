@@ -76,7 +76,7 @@
   justify-items: center;
 }
 
-div.card {
+div.mycard {
   min-height: 100px;
   min-width: 300px;
   margin: 10px 0;
@@ -92,15 +92,15 @@ div.card {
   color: #2c2c2c;
 }
 
-div.card h2 {
+div.mycard h2 {
   font-size: 1.2rem;
 }
 
-div.card .icon {
+div.mycard .myicon {
   width: 20px;
 }
 
-div.card .card-footer {
+div.mycard .mycard-footer {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -109,7 +109,7 @@ div.card .card-footer {
   left: 25px;
 }
 
-div.card .row {
+div.mycard .myrow {
   display: flex;
   align-items: center;
   gap: 5px;
