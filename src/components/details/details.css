@@ -5,7 +5,10 @@ body {
 .card {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .cars-image {
@@ -19,35 +22,31 @@ body {
 .car-props {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 50%;
+  text-align: justify;
+  font-size: .9rem;
 }
+
+.car-props > :nth-child(even) {
+  background-color: lightgray;
+}
+
 
 .cars-name {
-  font-size: 20px;
-  font-weight: bold;
+ text-align: right;
 }
 
-.cars-make {
-  font-size: 16px;
-  font-weight: bold;
+.cars-description {
+  font-size: .8rem;
+  text-align: justify;
 }
 
-.cars-type {
-  font-size: 16px;
-  font-style: italic;
+.configure {
+  margin-top: 50px;
+  padding: 10px;
 }
 
-.cars-cost {
-  font-size: 18px;
-  font-weight: bold;
+.configure button {
+  border-radius: 40px;
+  background-color: #88e62a ;
 }
 
-.cars-speed {
-  font-size: 16px;
-}
-
-.cars-color {
-  font-size: 16px;
-}
