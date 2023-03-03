@@ -23,20 +23,19 @@ body {
   display: flex;
   flex-direction: column;
   text-align: justify;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .car-props > :nth-child(even) {
   background-color: lightgray;
 }
 
-
 .cars-name {
- text-align: right;
+  text-align: right;
 }
 
 .cars-description {
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-align: justify;
 }
 
@@ -47,6 +46,5 @@ body {
 
 .configure button {
   border-radius: 40px;
-  background-color: #88e62a ;
+  background-color: #88e62a;
 }
-
