@@ -9,6 +9,7 @@ import Details from './components/details/Details';
 import NewReservationForm from './components/reservations/NewReservationForm';
 import Reservations from './components/reservations/Reservations';
 import reservationReducer from './redux/reservationsSlice';
+import Navigation from './components/navigation/Navigation';
 import './App.css';
 import AddCar from './components/addcar/AddCar';
 
@@ -18,6 +19,7 @@ const store = configureStore({
 
 const App = () => (
   <Provider store={store}>
+    <Navigation />
     <Routes>
       <Route path="/new-car" element={<AddCar />} />
       <Route path="/" element={<Main />} />
