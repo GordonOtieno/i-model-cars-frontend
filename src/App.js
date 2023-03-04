@@ -20,10 +20,10 @@ const store = configureStore({
 const App = () => (
   <Provider store={store}>
     <Routes>
-      <Route path="/" element={<RemoveCar />} />
       <Route path="/" element={<Main />} />
       <Route path="/new-car" element={<AddCar />} />
       <Route path="/details/:id" element={<Details />} />
+      <Route path="/delete-car" element={<RemoveCar />} />
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<SignUpForm />} />
       <Route path="/reservations" element={<Reservations />} />

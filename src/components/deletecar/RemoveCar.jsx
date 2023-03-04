@@ -19,12 +19,12 @@ function RemoveCar() {
       .catch((error) => console.error(error));
   }, []);
 
-  const deleteRequestHandler = (carId) => {
+  const deleteRequestHandler = (carId, carName) => {
     fetch(`http://localhost:3000/api/v1/cars/${carId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        mode: 'no-cors'
+        mode: 'no-cors',
       },
       body: JSON.stringify({
         id: carId,
@@ -33,12 +33,23 @@ function RemoveCar() {
       .then((response) => {
         if (response.ok) {
           console.log('Resource deleted successfully');
+          // alert('Car successfully deleted');
+          setShowModal({
+            alert: true,
+            message: `Yaaaay! You successfully deleted ${carName}`,
+            type: 'success',
+          });
         } else {
           console.error('Error deleting resource');
         }
       })
       .catch((error) => {
         console.error('Error deleting resource:', error);
+        setShowModal({
+          alert: true,
+          message: `Oops! Something went wrong with deleting ${carName}`,
+          type: 'error',
+        });
       });
   };
 
@@ -49,7 +60,7 @@ function RemoveCar() {
         <div className="grid gap">
           {data.map((car) => (
             <div key={car.id}>
-              {car.images && <img src={car.images[Object.keys(car.images)[0]]} alt="car-image" />}
+              {car.images && <img src={car.images[Object.keys(car.images)[0]]} alt="car" />}
               <div className={`${styles.actions} flex`}>
                 <h2>
                   {car.name}
@@ -57,7 +68,7 @@ function RemoveCar() {
                 </h2>
                 <button
                   type="button"
-                  onClick={() => deleteRequestHandler(car.id)}
+                  onClick={() => deleteRequestHandler(car.id, car.name)}
                 >
                   Detele
                 </button>
