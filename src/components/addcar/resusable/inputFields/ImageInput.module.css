@@ -21,7 +21,7 @@
   justify-content: center;
   color: var(--dark);
   gap: 0.5rem;
-  font-size: 0.75rem;
+  padding: 10px 10px;
 }
 
 .upload input {
@@ -37,8 +37,8 @@
 }
 
 .uploadImage {
-  width: 130px;
-  height: 70px;
+  width: 200px;
+  height: 100px;
   margin-top: 0.6rem;
 }
 

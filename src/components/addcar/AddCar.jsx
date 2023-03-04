@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import InputChange from './hooks/InputChange';
 import UseFileUpload from './hooks/useFileUpload';
 import Container from './resusable/container/Container';
@@ -14,6 +15,8 @@ const AddCar = () => {
   const [cost, handleCostChange] = InputChange('');
   const [speed, handleSpeedChange] = InputChange('');
   const { file, preview, handleFileChange } = UseFileUpload();
+
+  const navigate = useNavigate();
 
   const canBeSaved = [name, make, desc, cost, speed].every(Boolean);
   const data = {
@@ -43,6 +46,7 @@ const AddCar = () => {
         .then((data) => {
           console.log('Success:', data);
           alert('Car was successfully created');
+          navigate('/cars');
         })
         .catch((error) => {
           console.error('Error:', error);
