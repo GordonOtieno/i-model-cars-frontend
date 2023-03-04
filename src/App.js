@@ -17,13 +17,13 @@ const store = configureStore({
 
 const App = () => (
   <Provider store={store}>
+    <Navigation />
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<SignUpForm />} />
       <Route path="/reservations" element={<Reservations />} />
       <Route path="/reservations/new" element={<NewReservationForm />} />
-      <Route path="/navigation" element={<Navigation />} />
     </Routes>
   </Provider>
 );
