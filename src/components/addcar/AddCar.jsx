@@ -46,7 +46,7 @@ const AddCar = () => {
         .then((data) => {
           console.log('Success:', data);
           alert('Car was successfully created');
-          navigate('/cars');
+          navigate('/');
         })
         .catch((error) => {
           console.error('Error:', error);
