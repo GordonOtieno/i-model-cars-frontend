@@ -13,7 +13,6 @@
 
 .upload {
   background: rgba(46, 182, 46, 0.356);
-  padding: 0.2rem 0.5rem;
   cursor: pointer;
   border-radius: 30px;
   display: flex;
