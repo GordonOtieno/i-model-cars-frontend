@@ -1,12 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
+
 :root {
+  --light: #fff;
+  --dark: #000;
+  --form-background: #f8f8f8;
+  --grey: #ccc;
+  --transparent: transparent;
+  --primary: rgb(51, 58, 153);
+  --hero: #103f52be;
+  --light-dark: #3a3a3a96;
   --main-color: #96bf01;
   --main-font: 'Segoe UI', tahome, geneva, verdana, sans-serif;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-dark);
+}
+
+select,
+input:not([type="file"]) {
+  border-radius: 10px;
+  border: 1px solid var(--grey);
+  padding: 8px 1rem;
+  margin: 8px 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  background: var(--transparent);
+  letter-spacing: 1px;
+  width: 100%;
 }
 
 .buttn {
@@ -125,4 +154,59 @@ div.mycard .myrow {
   #resevations-list {
     grid-template-columns: 33% 33% 33%;
   }
+}
+
+.form-container {
+  background: var(--light);
+  backdrop-filter: blur(3rem);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  padding: 1.5rem 5rem;
+  border-radius: 15px;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-family: inherit;
+  margin-top: 1.5rem;
+}
+
+select {
+  background: var(--transparent);
+}
+
+.margin {
+  margin-bottom: 8px;
+}
+
+.hero {
+  color: var(--hero);
+}
+
+.input-div {
+  width: 100%;
+}
+
+.gap {
+  gap: 5rem;
 }
