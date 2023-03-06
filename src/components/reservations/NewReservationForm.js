@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { createReservationAPI } from '../../helpers/api';
+import isUserSigned from '../../helpers/auth';
 
-export default function NewReservationForm(props) {
-  // Get the car
+export default function NewReservationForm() {
   // eslint-disable-next-line react/prop-types, no-unused-vars
-  const { carId } = props;
-
+  // check user
+  useEffect(() => {
+    if (!isUserSigned()) {
+      window.location.href = '/signin';
+    }
+  }, []);
+  // Extract the car id from the URL
+  const { carId } = useParams();
   // Set initial fields values
   const [reservation, setReservation] = useState({
-    car_id: 0,
+    car_id: carId || 0,
     date: '',
     city: '',
   });
-
   // Set message
   const [msg, setMsg] = useState({
     type: '',

@@ -27,6 +27,7 @@ const App = () => (
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<SignUpForm />} />
       <Route path="/reservations" element={<Reservations />} />
+      <Route path="/reservations/new/:carId" element={<NewReservationForm />} />
       <Route path="/reservations/new" element={<NewReservationForm />} />
     </Routes>
   </Provider>

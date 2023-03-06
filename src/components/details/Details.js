@@ -85,7 +85,7 @@ function Details() {
               {carDetails.color}
             </span>
           </div>
-          <Link to="/reservations/" className="configure">
+          <Link to={`/reservations/new/${carDetails.id}`} className="configure">
             <button type="button">
               <AiOutlineSetting />
               <span>Reserve</span>
