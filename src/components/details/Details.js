@@ -28,7 +28,7 @@ function Details() {
       <div key={carDetails.id} className="card">
         <div className="cars-image">
           <img
-            src={carDetails.images}
+            src={carDetails.images[Object.keys(carDetails.images)[0]]}
             alt={carDetails.name}
           />
           <p className="cars-description">{carDetails.description}</p>
