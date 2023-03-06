@@ -60,7 +60,7 @@ export default function NewReservationForm() {
     <div id="rsrv-page">
       <h1>BOOK ONE OF OUR CARS FOR A TEST DRIVE</h1>
       <form>
-        <select name="car_id" value={carId}>
+        <select name="car_id" value={carId} onChange={handleFieldChange}>
           {cars.map((car) => (
             <option key={car.id} value={car.id}>{car.name}</option>
           ))}

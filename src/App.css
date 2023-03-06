@@ -51,7 +51,8 @@
 
 #rsrv-page form input[type="text"],
 #rsrv-page form input[type="number"],
-#rsrv-page form input[type="date"] {
+#rsrv-page form input[type="date"],
+#rsrv-page form select {
   min-width: 300px;
   margin: 8px 0;
   padding: 5px 10px;
