@@ -1,22 +1,21 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
-export const getCarsThunk = createAsyncThunk('cars/fetchAll', async () => {
-  const response = await axios.get('http://127.0.0.1:3000/api/v1/cars');
-  return response.data;
+export const getCarsThunk = createAsyncThunk('cars/getCars', async () => {
+  const response = await fetch('http://127.0.0.1:3000/api/v1/cars');
+  const data = await response.json();
+  return data;
 });
 
 const carsSlice = createSlice({
   name: 'cars',
-  initialState: { cars: [] },
-  reducers: {},
+  initialState: { cars: [], status: 'idle' },
   extraReducers: (builder) => {
     builder.addCase(getCarsThunk.fulfilled, (state, action) => {
+      state.status = 'succeded';
       state.cars = action.payload;
     });
   },
 });
-
-export const selectCars = (state) => state.cars.cars;
 
 export default carsSlice.reducer;
