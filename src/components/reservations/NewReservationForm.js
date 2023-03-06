@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { createReservationAPI } from '../../helpers/api';
 import isUserSigned from '../../helpers/auth';
+import { getCarsThunk } from '../../redux/cars/carsSlice';
 
 export default function NewReservationForm() {
   // eslint-disable-next-line react/prop-types, no-unused-vars
+  const dispatch = useDispatch();
+
   // Authenticate the user
   useEffect(() => {
     if (!isUserSigned()) {
       window.location.href = '/signin';
     }
+    dispatch(getCarsThunk());
   }, []);
+
+  const { cars = [] } = useSelector((state) => state.cars);
 
   // Extract user details
   const { id: userId } = JSON.parse(localStorage.getItem('user'));
@@ -53,7 +60,11 @@ export default function NewReservationForm() {
     <div id="rsrv-page">
       <h1>BOOK ONE OF OUR CARS FOR A TEST DRIVE</h1>
       <form>
-        <input type="number" name="car_id" placeholder="Car Id" value={reservation.car_id} onChange={handleFieldChange} />
+        <select name="car_id" value={carId}>
+          {cars.map((car) => (
+            <option key={car.id} value={car.id}>{car.name}</option>
+          ))}
+        </select>
         <input type="date" name="date" placeholder="date" value={reservation.date} onChange={handleFieldChange} />
         <input type="text" name="city" placeholder="city" value={reservation.city} onChange={handleFieldChange} />
         <input className="buttn" type="submit" value="Book Now" onClick={handleSubmit} />
