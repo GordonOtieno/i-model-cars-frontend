@@ -1,21 +1,22 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { Link } from 'react-router-dom';
-import Carousel from 'react-bootstrap/Carousel';
+// import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import { getCarsThunk } from '../../redux/cars/carsSlice';
 import './Main.css';
 
 const Main = () => {
-  const [cars, setCars] = useState([]);
+  const dispatch = useDispatch();
+  const { cars = [], status = 'idle' } = useSelector((state) => state.cars);
   // Fetch data from the localhost api
   useEffect(() => {
-    axios.get('http://127.0.0.1:3000/api/v1/cars')
-      .then((response) => {
-        setCars(response.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    if (status === 'idle') {
+      dispatch(getCarsThunk());
+    }
+  }, [status, dispatch]);
 
   return (
     <section>
@@ -37,7 +38,7 @@ const Main = () => {
               {carGroup.map((car) => (
                 <div key={car.id} className="w-33">
                   <Link to={`/details/${car.id}`}>
-                    <img src={car.images.dark} alt={car.name} style={{ height: '200px', width: '300px' }} />
+                    <img src={car.images[Object.keys(car.images)[0]]} alt={car.name} style={{ height: '200px', width: '300px' }} />
                   </Link>
                   <div className="car-info">
                     <h4>{car.name}</h4>
