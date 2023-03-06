@@ -46,7 +46,7 @@ a {
   height: 27px;
   padding: 4px;
   border-radius: 50%;
-  background-color: none;
+  background: none;
   border: 1px solid #ddd;
   color: #ddd;
   justify-content: center;
