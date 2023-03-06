@@ -7,12 +7,16 @@ import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
 import './Main.css';
+import isUserSigned from '../../helpers/auth';
 
 const Main = () => {
   const dispatch = useDispatch();
   const { cars = null, status = 'idle' } = useSelector((state) => state.cars);
   // Fetch data from the localhost api
   useEffect(() => {
+    if (!isUserSigned()) {
+      window.location.href = '/signin';
+    }
     if (status === 'idle') {
       dispatch(getCarsThunk());
     }

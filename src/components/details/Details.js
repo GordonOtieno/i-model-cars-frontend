@@ -8,7 +8,7 @@ import './details.css';
 
 function Details() {
   const { id } = useParams();
-  const [carDetails, setCarDetails] = useState({});
+  const [carDetails, setCarDetails] = useState(null);
 
   useEffect(() => {
     const fetchCarDetails = async () => {
@@ -25,75 +25,77 @@ function Details() {
 
   return (
     <section>
-      <div key={carDetails.id} className="card">
-        <div className="cars-image">
-          <img
-            src={carDetails.images[Object.keys(carDetails.images)[0]]}
-            alt={carDetails.name}
-          />
-          <p className="cars-description">{carDetails.description}</p>
-          <div className="configure">
-            <button type="button">
-              <BiLeftArrow />
-            </button>
+      {carDetails && (
+        <div key={carDetails.id} className="card">
+          <div className="cars-image">
+            <img
+              src={carDetails.images[Object.keys(carDetails.images)[0]]}
+              alt={carDetails.name}
+            />
+            <p className="cars-description">{carDetails.description}</p>
+            <div className="configure">
+              <button type="button">
+                <BiLeftArrow />
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="car-props">
-          <div className="cars-name">
-            <h3>{carDetails.name}</h3>
-            <span>
-              <i>
-                $-
-                {carDetails.cost}
+          <div className="car-props">
+            <div className="cars-name">
+              <h3>{carDetails.name}</h3>
+              <span>
+                <i>
+                  $-
+                  {carDetails.cost}
+                  {' '}
+                  upon reservations!
+                </i>
+              </span>
+            </div>
+            <div className="cars-make">
+              <span>
+                Make:
                 {' '}
-                upon reservations!
-              </i>
-            </span>
+                {carDetails.make}
+              </span>
+            </div>
+            <div className="cars-type">
+              <span>
+                Type:
+                {' '}
+                {carDetails.type}
+              </span>
+            </div>
+            <div className="cars-cost">
+              <span>
+                Cost:
+                {' '}
+                {carDetails.cost}
+              </span>
+            </div>
+            <div className="cars-speed">
+              <span>
+                Speed:
+                {' '}
+                {carDetails.speed}
+              </span>
+            </div>
+            <div className="cars-color">
+              <span>
+                Color:
+                {' '}
+                {carDetails.color}
+              </span>
+            </div>
+            <Link to={`/reservations/new/${carDetails.id}`} className="configure">
+              <button type="button">
+                <AiOutlineSetting />
+                <span>Reserve</span>
+                <TfiArrowCircleRight />
+              </button>
+            </Link>
           </div>
-          <div className="cars-make">
-            <span>
-              Make:
-              {' '}
-              {carDetails.make}
-            </span>
-          </div>
-          <div className="cars-type">
-            <span>
-              Type:
-              {' '}
-              {carDetails.type}
-            </span>
-          </div>
-          <div className="cars-cost">
-            <span>
-              Cost:
-              {' '}
-              {carDetails.cost}
-            </span>
-          </div>
-          <div className="cars-speed">
-            <span>
-              Speed:
-              {' '}
-              {carDetails.speed}
-            </span>
-          </div>
-          <div className="cars-color">
-            <span>
-              Color:
-              {' '}
-              {carDetails.color}
-            </span>
-          </div>
-          <Link to={`/reservations/new/${carDetails.id}`} className="configure">
-            <button type="button">
-              <AiOutlineSetting />
-              <span>Reserve</span>
-              <TfiArrowCircleRight />
-            </button>
-          </Link>
         </div>
-      </div>
+      )}
     </section>
   );
 }

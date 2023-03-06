@@ -15,7 +15,7 @@ export default function NewReservationForm() {
       window.location.href = '/signin';
     }
     dispatch(getCarsThunk());
-  }, []);
+  }, [dispatch]);
 
   const { cars = [] } = useSelector((state) => state.cars);
 

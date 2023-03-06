@@ -4,12 +4,16 @@ import { getReservationsThunk } from '../../redux/reservationsSlice';
 import locationIcon from '../../img/location_icon.png';
 import calendarIcon from '../../img/calendar_icon.png';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
+import isUserSigned from '../../helpers/auth';
 
 export default function Reservations() {
   const { reservations } = useSelector((state) => state.reservations);
   const { cars = [] } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
   useEffect(() => {
+    if (!isUserSigned()) {
+      window.location.href = '/signin';
+    }
     dispatch((getCarsThunk()));
     dispatch((getReservationsThunk()));
   }, [dispatch]);
