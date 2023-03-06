@@ -9,7 +9,7 @@ export const getCarsThunk = createAsyncThunk('cars/getCars', async () => {
 
 const carsSlice = createSlice({
   name: 'cars',
-  initialState: { cars: [], status: 'idle' },
+  initialState: { cars: null, status: 'idle' },
   extraReducers: (builder) => {
     builder.addCase(getCarsThunk.fulfilled, (state, action) => {
       state.status = 'succeded';

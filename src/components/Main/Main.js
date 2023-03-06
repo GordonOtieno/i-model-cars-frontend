@@ -10,7 +10,7 @@ import './Main.css';
 
 const Main = () => {
   const dispatch = useDispatch();
-  const { cars = [], status = 'idle' } = useSelector((state) => state.cars);
+  const { cars = null, status = 'idle' } = useSelector((state) => state.cars);
   // Fetch data from the localhost api
   useEffect(() => {
     if (status === 'idle') {
@@ -26,7 +26,7 @@ const Main = () => {
       </header>
 
       <Carousel className="cars-container" interval={null}>
-        {cars.reduce((acc, car, index) => {
+        {cars && cars.reduce((acc, car, index) => {
           if (index % 3 === 0) {
             acc.push([]);
           }

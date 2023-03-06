@@ -10,35 +10,38 @@ export default function Reservations() {
   const { cars = [] } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch((getReservationsThunk()));
     dispatch((getCarsThunk()));
+    dispatch((getReservationsThunk()));
   }, [dispatch]);
   function getCar(carId) {
-    return cars.filter((car) => car.id === carId).pop();
+    return cars.find((car) => car.id === carId);
   }
   return (
     <main id="resevations-page">
       <h1>Your Reservations</h1>
       <section id="resevations-list">
-        {reservations.map((reservation) => (
-          <div key={reservation.id} className="mycard">
-            <h2>
-              {getCar(reservation.car_id).name}
-              {' '}
-              {getCar(reservation.car_id).make}
-            </h2>
-            <div className="mycard-footer">
-              <div className="myrow">
-                <img className="myicon" src={locationIcon} alt="City name" />
-                {reservation.city}
-              </div>
-              <div className="myrow">
-                <img className="myicon" src={calendarIcon} alt="Date" />
-                {reservation.date}
+        {cars && reservations && reservations.map((reservation) => {
+          const car = getCar(reservation.car_id);
+          return (
+            <div key={reservation.id} className="mycard">
+              <h2>
+                {car.name}
+                {' '}
+                {car.make}
+              </h2>
+              <div className="mycard-footer">
+                <div className="myrow">
+                  <img className="myicon" src={locationIcon} alt="City name" />
+                  {reservation.city}
+                </div>
+                <div className="myrow">
+                  <img className="myicon" src={calendarIcon} alt="Date" />
+                  {reservation.date}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
     </main>
   );
