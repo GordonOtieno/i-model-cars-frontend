@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 
 body {
   box-sizing: border-box;
@@ -15,10 +16,50 @@ body {
 }
 
 .cars-container {
-  display: grid;
-  grid-template-columns: repeat(var(--cars-per-row), 1fr);
-  grid-gap: 20px;
-  align-items: center;
+  padding: 20px;
+}
+
+.carousel-item .d-flex {
+  gap: 15px;
+}
+
+.d-flex > div {
+  width: 100%;
+}
+
+.carousel-item .d-flex a {
+  display: block;
+  width: 100%;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 1;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  border: 1px solid #fff;
+  background-color: var(--main-color);
+  width: 70px;
+  position: absolute;
+}
+
+.carousel-control-prev-icon {
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+  left: 0;
+}
+
+.carousel-control-next-icon {
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
+  right: 0;
+}
+
+.carousel-inner img {
+  border-radius: 15px;
+  width: 100% !important;
 }
 
 .car-info {
@@ -56,10 +97,4 @@ a {
 .icon:hover {
   background-color: #333;
   color: #fff;
-}
-
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: visible !important;
 }

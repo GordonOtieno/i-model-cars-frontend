@@ -14,9 +14,9 @@ const Navigation = () => (
     </div>
     <div className="sidebar-content">
       <Link to="/"><li className="car-link">CARS</li></Link>
-      <Link to="/reservation/new"><li>RESERVE</li></Link>
+      <Link to="/reservations/new"><li>RESERVE</li></Link>
       <Link to="/reservations"><li>MY RESERVATIONS</li></Link>
-      <Link to="/"><li>ADD CARS</li></Link>
+      <Link to="/new-car"><li>ADD CARS</li></Link>
       <Link to="/"><li>DELETE CARS</li></Link>
     </div>
     <div className="social-icons">

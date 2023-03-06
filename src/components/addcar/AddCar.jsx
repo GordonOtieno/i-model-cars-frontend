@@ -59,7 +59,7 @@ const AddCar = () => {
     <Container>
       <div className="form-container">
         <span className="flex flex-column center hero margin">
-          <h1>Add Car</h1>
+          <h1>Add New Car</h1>
         </span>
         <form onSubmit={handleSubmit} className="flex flex-column">
           <Input
@@ -113,7 +113,7 @@ const AddCar = () => {
             handleFileChange={(input) => handleFileChange(input)}
           />
 
-          <button type="submit">Add Bike</button>
+          <button type="submit">Add Car</button>
         </form>
       </div>
     </Container>

@@ -20,6 +20,12 @@
   padding: 0;
 }
 
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
 a {
   text-decoration: none;
   color: var(--light-dark);
@@ -82,7 +88,7 @@ input:not([type="file"]) {
 #rsrv-page form input[type="number"],
 #rsrv-page form input[type="date"],
 #rsrv-page form select {
-  min-width: 300px;
+  min-width: 100px;
   margin: 8px 0;
   padding: 5px 10px;
   border-radius: 15px;
@@ -108,7 +114,7 @@ input:not([type="file"]) {
 
 div.mycard {
   min-height: 100px;
-  min-width: 300px;
+  min-width: 240px;
   margin: 10px 0;
   padding: 15px 15px;
   padding-bottom: 35px;
@@ -149,11 +155,27 @@ div.mycard .myrow {
   #resevations-list {
     grid-template-columns: 50% 50%;
   }
+
+  #root {
+    grid-template-columns: 30% 70%;
+  }
+
+  .social-icons {
+    justify-content: space-between;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   #resevations-list {
     grid-template-columns: 33% 33% 33%;
+  }
+
+  #root {
+    grid-template-columns: 20% 80%;
+  }
+
+  div.mycard {
+    min-width: 300px;
   }
 }
 
