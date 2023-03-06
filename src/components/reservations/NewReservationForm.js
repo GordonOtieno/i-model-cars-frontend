@@ -5,20 +5,26 @@ import isUserSigned from '../../helpers/auth';
 
 export default function NewReservationForm() {
   // eslint-disable-next-line react/prop-types, no-unused-vars
-  // check user
+  // Authenticate the user
   useEffect(() => {
     if (!isUserSigned()) {
       window.location.href = '/signin';
     }
   }, []);
+
+  // Extract user details
+  const { id: userId } = JSON.parse(localStorage.getItem('user'));
+
   // Extract the car id from the URL
   const { carId } = useParams();
+
   // Set initial fields values
   const [reservation, setReservation] = useState({
     car_id: carId || 0,
     date: '',
     city: '',
   });
+
   // Set message
   const [msg, setMsg] = useState({
     type: '',
@@ -28,7 +34,7 @@ export default function NewReservationForm() {
   // Send the reservation details to the API
   const handleSubmit = (e) => {
     e.preventDefault();
-    createReservationAPI(1, reservation)
+    createReservationAPI(userId, reservation)
       .then((response) => {
         if (response.status === 200) {
           setMsg({ type: 'msg-sucss', text: 'The car has been booked' });
