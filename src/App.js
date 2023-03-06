@@ -14,7 +14,7 @@ import './App.css';
 
 const store = configureStore({
   reducer: {
-    reservationReducer,
+    reservations: reservationReducer,
     cars: carsReducer,
   },
 });
