@@ -9,10 +9,14 @@ import Details from './components/details/Details';
 import NewReservationForm from './components/reservations/NewReservationForm';
 import Reservations from './components/reservations/Reservations';
 import reservationReducer from './redux/reservationsSlice';
+import carsReducer from './redux/cars/carsSlice';
 import './App.css';
 
 const store = configureStore({
-  reducer: reservationReducer,
+  reducer: {
+    reservationReducer,
+    cars: carsReducer,
+  },
 });
 
 const App = () => (
