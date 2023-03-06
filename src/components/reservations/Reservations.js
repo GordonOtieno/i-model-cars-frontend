@@ -8,7 +8,7 @@ import isUserSigned from '../../helpers/auth';
 
 export default function Reservations() {
   const { reservations } = useSelector((state) => state.reservations);
-  const { cars = [] } = useSelector((state) => state.cars);
+  const { cars = null } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!isUserSigned()) {

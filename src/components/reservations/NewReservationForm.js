@@ -17,7 +17,7 @@ export default function NewReservationForm() {
     dispatch(getCarsThunk());
   }, [dispatch]);
 
-  const { cars = [] } = useSelector((state) => state.cars);
+  const { cars = null } = useSelector((state) => state.cars);
 
   // Extract user details
   const { id: userId } = JSON.parse(localStorage.getItem('user'));
@@ -61,7 +61,7 @@ export default function NewReservationForm() {
       <h1>BOOK ONE OF OUR CARS FOR A TEST DRIVE</h1>
       <form>
         <select name="car_id" value={carId} onChange={handleFieldChange}>
-          {cars.map((car) => (
+          {cars && cars.map((car) => (
             <option key={car.id} value={car.id}>{car.name}</option>
           ))}
         </select>

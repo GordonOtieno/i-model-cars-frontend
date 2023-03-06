@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
 
+/* stylelint-disable no-descending-specificity */
 :root {
   --light: #fff;
   --dark: #000;
@@ -33,7 +34,6 @@ input:not([type="file"]) {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
-  background: var(--transparent);
   letter-spacing: 1px;
   width: 100%;
 }
@@ -190,10 +190,6 @@ button {
   color: white;
   font-family: inherit;
   margin-top: 1.5rem;
-}
-
-select {
-  background: var(--transparent);
 }
 
 .margin {
