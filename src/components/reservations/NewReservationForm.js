@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { createReservationAPI } from '../../helpers/api';
 import isUserSigned from '../../helpers/auth';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
@@ -8,10 +8,11 @@ import { getCarsThunk } from '../../redux/cars/carsSlice';
 export default function NewReservationForm() {
   // eslint-disable-next-line react/prop-types, no-unused-vars
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   // Authenticate the user
   useEffect(() => {
     if (!isUserSigned()) {
-      window.location.href = '/signin';
+      navigate('/signin');
     }
     dispatch(getCarsThunk());
   }, [dispatch]);

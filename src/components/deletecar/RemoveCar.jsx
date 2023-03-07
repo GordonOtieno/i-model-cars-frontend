@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { baseURL } from '../../helpers/api';
 import Modal from '../addcar/resusable/modal/Modal';
 import isUserSigned from '../../helpers/auth';
@@ -13,6 +14,7 @@ function RemoveCar() {
   });
 
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${baseURL}/cars`)
@@ -21,7 +23,7 @@ function RemoveCar() {
       .catch((error) => error);
 
     if (!isUserSigned()) {
-      window.location.href = '/signin';
+      navigate('/signin');
     }
   }, []);
 

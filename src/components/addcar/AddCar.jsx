@@ -22,7 +22,7 @@ const AddCar = () => {
 
   useEffect(() => {
     if (!isUserSigned()) {
-      window.location.href = '/signin';
+      navigate('/signin');
     }
   }, []);
   const canBeSaved = [name, make, desc, cost, speed].every(Boolean);

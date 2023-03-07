@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getReservationsThunk } from '../../redux/reservationsSlice';
 import locationIcon from '../../img/location_icon.png';
 import calendarIcon from '../../img/calendar_icon.png';
@@ -10,9 +11,10 @@ export default function Reservations() {
   const { reservations } = useSelector((state) => state.reservations);
   const { cars = null } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     if (!isUserSigned()) {
-      window.location.href = '/signin';
+      navigate('/signin');
     }
     dispatch((getCarsThunk()));
     dispatch((getReservationsThunk()));
