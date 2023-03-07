@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# 📗 Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [📖 About the Project](#[project])
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Available Scripts](#available-scripts)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgments)
+- [📝 License](#license)
 
-## Available Scripts
+
+# I Model Cars
+
+**I Model Cars** is a car booking service app where you can book a car for a test drive, you can pick a car from the catalogue, pick a date and city and your appointment will be set up. The app was built with Ruby on Rails and React.JS, the is split into a backend and frontend part, this repository is for the frontend part to check the backend please head to this [repository](https://github.com/GordonOtieno/i-model-cars-backend)
+
+## Built With
+
+### Tech Stack 
+
+<ul>
+  <li><a href="https://www.ruby-lang.org/en/news/2022/11/24/ruby-3-1-3-released/">Ruby 3.1</a></li>
+  <li><a href="https://rubyonrails.org/">Ruby on Rails 7</a></li>
+  <li><a href="https://www.postgresql.org/">PostgreSQL 15</a></li>
+  <li><a href="https://reactjs.org/">React</a></li>
+  <li><a href="https://redux.js.org/">Redux</a></li>
+  <li><a href="https://reactrouter.com/en/main">React Router</a></li>
+</ul>
+
+## Live Demo 
+
+- [Live Demo Link](https://ouasamine.github.io/[project])
+
+### Key Features
+
+- Add cars to the catalogue
+- Book a car from the catalogue
+- Access all your bookings
+
+## Getting Started 
+
+> To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+  - <a href="https://www.ruby-lang.org/en/news/2022/11/24/ruby-3-1-3-released/">Ruby</a>
+  - <a href="https://rubyonrails.org/">Ruby on Rails</a>
+  - <a href="https://www.npmjs.com/">npm</a>
+  - any code editor
+
+### Setup
+
+To setup the project follow the steps:
+
+1. Clone this project using Git Bash: 
+    ``` 
+    git clone https://github.com/GordonOtieno/i-model-cars-frontend
+    ```
+  
+2. Inside the project directory, install the project's dependencies
+    ```
+    npm install
+    ``` 
+
+3. Make sure to follow the instructions on the backend repository to run backend serve before starting the frontend server
+
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+- ```
+  npm start
+  ```
+  Runs the app server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ```
+  npm test
+  ```
+  Launches the test runner.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Authors
 
-### `npm test`
+👤 **Amine**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- GitHub: [@ouasamine](https://github.com/ouasamine)
+- Twitter: [@ouass_amine](https://twitter.com/ouass_amine)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/amine-ouassef)
 
-### `npm run build`
+👤 **Okechukwu Muokwugwo**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- GitHub: [@githubhandle](https://github.com/Okechukwu-muokwugwo)
+- Twitter: [@twitterhandle](https://twitter.com/excel4eva)
+- LinkedIn: [LinkedIn](LinkedIn.com/in/okeimuokwugwo)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👤 **Gordon Otieno**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- GitHub: [@GordonOtieno](https://github.com/GordonOtieno)
+- Twitter: [@GordonOtieno](https://twitter.com/GordonO34459259/twitterhandle)
+- LinkedIn: [GordonOtieno](https://www.linkedin.com/in/gordonotieno/)
 
-### `npm run eject`
+## Future Feature
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Build a dashboard for admins
+- Implement full user authentication
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions, issues, and feature requests are welcome!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Feel free to check the [issues page](../../issues/).
 
-## Learn More
+## Show your support <a name="support"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you like this project give it a star!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgments 
 
-### Code Splitting
+- Microverse 
+- Credit goes to Murat Korkmaz whose [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) was user in this project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License 
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE) licensed.
