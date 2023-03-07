@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
+import { useNavigate } from 'react-router-dom';
 import './Main.css';
 import isUserSigned from '../../helpers/auth';
 
@@ -13,11 +14,11 @@ const Main = () => {
   const dispatch = useDispatch();
   const { cars = null, status = 'idle' } = useSelector((state) => state.cars);
   // Fetch data from the localhost api
-
+  const navigate = useNavigate();
   const [carouselIndex, setcarouselIndex] = useState(0);
   useEffect(() => {
     if (!isUserSigned()) {
-      window.location.href = '/signin';
+      navigate('/signin');
     }
     if (window.innerWidth <= 768) {
       setcarouselIndex(1);
