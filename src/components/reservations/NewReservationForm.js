@@ -8,14 +8,15 @@ import { getCarsThunk } from '../../redux/cars/carsSlice';
 export default function NewReservationForm() {
   // eslint-disable-next-line react/prop-types, no-unused-vars
   const dispatch = useDispatch();
-
+  let userId;
   // Authenticate the user
   useEffect(() => {
     if (!isUserSigned()) {
       window.location.href = '/signin';
     } else {
       // Extract user details
-      const { id: userId } = JSON.parse(localStorage.getItem('user'));
+      const { id: userIdOBJ } = JSON.parse(localStorage.getItem('user'));
+      userId = userIdOBJ;
     }
     dispatch(getCarsThunk());
   }, [dispatch]);
