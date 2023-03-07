@@ -34,7 +34,7 @@ const Login = () => {
     event.preventDefault();
     isUserExistInApi(username).then((data) => {
       if (data === false) {
-        console.log('user doeasnt exist!');
+        alert('user does not exist! Please Sign up.');
       } else {
         localStorage.setItem('user', JSON.stringify(data));
         dispatch(loginUser({ data: username, isLogged: true }));

@@ -37,7 +37,7 @@ const SignUpForm = () => {
     //   alert('Please enter a valid username.');
     //   return;
     // }
-    createUserAPI(username).then((userdata) => {
+    createUserAPI(username, useremail).then((userdata) => {
       if (userdata !== false) {
         dispatch(signUpUser({ data: userdata, isLogged: true }));
         localStorage.setItem('user', JSON.stringify(userdata));
