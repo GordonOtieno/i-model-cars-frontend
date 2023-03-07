@@ -45,7 +45,7 @@ function RemoveCar() {
             message: `Yaaaay! You successfully deleted ${carName}`,
             type: 'success',
           });
-          window.location.reload();
+          navigate('/delete-car');
         }
       })
       .catch(() => {
