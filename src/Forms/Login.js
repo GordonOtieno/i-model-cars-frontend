@@ -35,7 +35,7 @@ const Login = () => {
     event.preventDefault();
     isUserExistInApi(username).then((data) => {
       if (data === false) {
-        alert('user does not exist! Please Sign up.');
+        window.location.href = '/signup';
       } else {
         localStorage.setItem('user', JSON.stringify(data));
         dispatch(loginUser({ data: username, isLogged: true }));

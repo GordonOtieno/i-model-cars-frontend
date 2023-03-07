@@ -16,8 +16,9 @@ function Details() {
       try {
         const response = await axios.get(`${baseURL}/cars/${id}`);
         setCarDetails(response.data);
+        return response;
       } catch (error) {
-        console.log(error);
+        return error;
       }
     };
 

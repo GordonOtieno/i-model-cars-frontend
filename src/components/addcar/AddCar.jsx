@@ -50,15 +50,10 @@ const AddCar = () => {
         body: JSON.stringify(data),
       })
         .then((response) => response.json())
-        .then((data) => {
-          console.log('Success:', data);
-          alert('Car was successfully created');
+        .then(() => {
           navigate('/');
         })
-        .catch((error) => {
-          console.error('Error:', error);
-          alert('Woops! Something went wrong. Please check your inputs.');
-        });
+        .catch((error) => error);
     }
   };
 

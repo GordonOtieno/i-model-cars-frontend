@@ -18,7 +18,7 @@ function RemoveCar() {
     fetch(`${baseURL}/cars`)
       .then((response) => response.json())
       .then((data) => setData(data))
-      .catch((error) => console.error(error));
+      .catch((error) => error);
 
     if (!isUserSigned()) {
       window.location.href = '/signin';
@@ -38,20 +38,15 @@ function RemoveCar() {
     })
       .then((response) => {
         if (response.ok) {
-          console.log('Resource deleted successfully');
-          // alert('Car successfully deleted');
           setShowModal({
             alert: true,
             message: `Yaaaay! You successfully deleted ${carName}`,
             type: 'success',
           });
           window.location.reload();
-        } else {
-          console.error('Error deleting resource');
         }
       })
-      .catch((error) => {
-        console.error('Error deleting resource:', error);
+      .catch(() => {
         setShowModal({
           alert: true,
           message: `Oops! Something went wrong with deleting ${carName}`,
