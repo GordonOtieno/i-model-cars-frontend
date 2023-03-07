@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useHistory } from 'react-router-dom';
 import { baseURL } from '../../helpers/api';
 import Modal from '../addcar/resusable/modal/Modal';
 import isUserSigned from '../../helpers/auth';
@@ -15,6 +15,7 @@ function RemoveCar() {
 
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  const history = useHistory();
 
   useEffect(() => {
     fetch(`${baseURL}/cars`)
@@ -45,7 +46,7 @@ function RemoveCar() {
             message: `Yaaaay! You successfully deleted ${carName}`,
             type: 'success',
           });
-          navigate('/delete-car');
+          history.push(location.pathname);
         }
       })
       .catch(() => {
