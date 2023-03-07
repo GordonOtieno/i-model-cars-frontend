@@ -1,12 +1,10 @@
-// import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 import Carousel from 'react-bootstrap/Carousel';
-import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
-import { useNavigate } from 'react-router-dom';
 import './Main.css';
 import isUserSigned from '../../helpers/auth';
 
