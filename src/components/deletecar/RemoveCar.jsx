@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { baseURL } from '../../helpers/api';
 import Modal from '../addcar/resusable/modal/Modal';
 import isUserSigned from '../../helpers/auth';
