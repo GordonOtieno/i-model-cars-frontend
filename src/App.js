@@ -13,6 +13,7 @@ import carsReducer from './redux/cars/carsSlice';
 import Navigation from './components/navigation/Navigation';
 import './App.css';
 import AddCar from './components/addcar/AddCar';
+import RemoveCar from './components/deletecar/RemoveCar';
 
 const store = configureStore({
   reducer: {
@@ -25,9 +26,10 @@ const App = () => (
   <Provider store={store}>
     <Navigation />
     <Routes>
-      <Route path="/new-car" element={<AddCar />} />
       <Route path="/" element={<Main />} />
+      <Route path="/new-car" element={<AddCar />} />
       <Route path="/details/:id" element={<Details />} />
+      <Route path="/delete-car" element={<RemoveCar />} />
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<SignUpForm />} />
       <Route path="/reservations" element={<Reservations />} />

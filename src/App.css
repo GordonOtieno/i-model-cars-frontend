@@ -230,3 +230,11 @@ button {
 .gap {
   gap: 5rem;
 }
+
+.grid {
+  display: grid;
+}
+
+.detete-header {
+  padding-top: 2rem;
+}
