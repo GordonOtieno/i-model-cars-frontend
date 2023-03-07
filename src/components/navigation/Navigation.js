@@ -13,7 +13,7 @@ const Navigation = () => (
       <img src={carLogo} alt="i-model car logo" style={{ height: '50px', width: '100px' }} />
     </div>
     <div className="sidebar-content">
-      <Link to="/"><li className="car-link">CARS</li></Link>
+      <Link to="/"><li>CARS</li></Link>
       <Link to="/reservations/new"><li>RESERVE</li></Link>
       <Link to="/reservations"><li>MY RESERVATIONS</li></Link>
       <Link to="/new-car"><li>ADD CARS</li></Link>

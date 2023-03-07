@@ -69,7 +69,7 @@ body {
   align-items: center;
 }
 
-.social-icons {
+.social-icon {
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -82,13 +82,13 @@ a {
 }
 
 .icon {
-  display: inline-block;
-  width: 27px;
-  height: 27px;
+  display: flex;
+  width: 35px;
+  height: 35px;
   padding: 4px;
   border-radius: 50%;
   background: none;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   color: #ddd;
   justify-content: center;
   align-items: center;
