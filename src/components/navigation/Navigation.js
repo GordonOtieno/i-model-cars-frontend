@@ -17,7 +17,7 @@ const Navigation = () => (
       <Link to="/reservations/new"><li>RESERVE</li></Link>
       <Link to="/reservations"><li>MY RESERVATIONS</li></Link>
       <Link to="/new-car"><li>ADD CARS</li></Link>
-      <Link to="/"><li>DELETE CARS</li></Link>
+      <Link to="/delete-car"><li>DELETE CARS</li></Link>
     </div>
     <div className="social-icons">
 

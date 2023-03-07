@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { baseURL } from '../../helpers/api';
 import Modal from '../addcar/resusable/modal/Modal';
 
 import styles from './RemoveCar.module.css';
@@ -13,14 +14,14 @@ function RemoveCar() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/cars')
+    fetch(`${baseURL}/cars`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error));
   }, []);
 
   const deleteRequestHandler = (carId, carName) => {
-    fetch(`http://localhost:3000/api/v1/cars/${carId}`, {
+    fetch(`${baseURL}/cars/${carId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

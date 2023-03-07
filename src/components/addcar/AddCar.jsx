@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { baseURL } from '../../helpers/api';
 import InputChange from './hooks/InputChange';
 import UseFileUpload from './hooks/useFileUpload';
 import Container from './resusable/container/Container';
@@ -35,7 +36,7 @@ const AddCar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (canBeSaved) {
-      fetch('http://127.0.0.1:3000/api/v1/cars', {
+      fetch(`${baseURL}/cars`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

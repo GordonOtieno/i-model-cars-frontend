@@ -1,5 +1,7 @@
+export const baseURL = 'https://i-model-cars.onrender.com/api/v1';
+
 export function createReservationAPI(userID, reservation) {
-  return fetch(`http://127.0.0.1:3000/api/v1/users/${userID}/reservations`, {
+  return fetch(`${baseURL}/users/${userID}/reservations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -9,5 +11,5 @@ export function createReservationAPI(userID, reservation) {
 }
 
 export function getReservationsAPI(userID) {
-  return fetch(`http://127.0.0.1:3000/api/v1/users/${userID}/reservations`);
+  return fetch(`${baseURL}/users/${userID}/reservations`);
 }

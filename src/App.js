@@ -26,7 +26,7 @@ const App = () => (
   <Provider store={store}>
     <Navigation />
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="" element={<Main />} />
       <Route path="/new-car" element={<AddCar />} />
       <Route path="/details/:id" element={<Details />} />
       <Route path="/delete-car" element={<RemoveCar />} />

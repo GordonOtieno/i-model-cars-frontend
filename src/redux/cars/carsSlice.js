@@ -1,8 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { baseURL } from '../../helpers/api';
 
 export const getCarsThunk = createAsyncThunk('cars/getCars', async () => {
-  const response = await fetch('http://127.0.0.1:3000/api/v1/cars');
+  const response = await fetch(`${baseURL}/cars`);
   const data = await response.json();
   return data;
 });

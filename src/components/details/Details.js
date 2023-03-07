@@ -5,6 +5,7 @@ import { AiOutlineSetting } from 'react-icons/ai';
 import { TfiArrowCircleRight } from 'react-icons/tfi';
 import { BiLeftArrow } from 'react-icons/bi';
 import './details.css';
+import { baseURL } from '../../helpers/api';
 
 function Details() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ function Details() {
   useEffect(() => {
     const fetchCarDetails = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:3000/api/v1/cars/${id}`);
+        const response = await axios.get(`${baseURL}/cars/${id}`);
         setCarDetails(response.data);
       } catch (error) {
         console.log(error);
