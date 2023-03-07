@@ -28,7 +28,8 @@ body {
 }
 
 .carousel-item .d-flex a {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
@@ -60,6 +61,7 @@ body {
 .carousel-inner img {
   border-radius: 15px;
   width: 100% !important;
+  max-width: 400px;
 }
 
 .car-info {
