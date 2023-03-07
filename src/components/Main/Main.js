@@ -29,7 +29,7 @@ const Main = () => {
     if (status === 'idle') {
       dispatch(getCarsThunk());
     }
-  }, [status, dispatch, window.innerWidth]);
+  }, [status, dispatch]);
 
   return (
     <section>
@@ -43,7 +43,9 @@ const Main = () => {
           if (index % carouselIndex === 0) {
             acc.push([]);
           }
-          acc[acc.length - 1].push(car);
+          if (acc[acc.length - 1]) {
+            acc[acc.length - 1].push(car);
+          }
           return acc;
         }, []).map((carGroup) => (
           <Carousel.Item key={uuidv4()} className="cars">
