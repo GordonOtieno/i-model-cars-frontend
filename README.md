@@ -37,7 +37,7 @@
 ## Live Demo 
 
 - [Live Demo Link](https://wondrous-gumption-278ae4.netlify.app/)
-- [Link to Backend Repo.](https://github.com/GordonOtieno/i-model-cars-frontend)
+- [Link to Backend Repo.](https://github.com/GordonOtieno/i-model-cars-backend)
 
 ### Key Features
 
