@@ -9,12 +9,16 @@ import Details from './components/details/Details';
 import NewReservationForm from './components/reservations/NewReservationForm';
 import Reservations from './components/reservations/Reservations';
 import reservationReducer from './redux/reservationsSlice';
+import carsReducer from './redux/cars/carsSlice';
 import Navigation from './components/navigation/Navigation';
 import './App.css';
 import AddCar from './components/addcar/AddCar';
 
 const store = configureStore({
-  reducer: reservationReducer,
+  reducer: {
+    reservations: reservationReducer,
+    cars: carsReducer,
+  },
 });
 
 const App = () => (
@@ -27,6 +31,7 @@ const App = () => (
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<SignUpForm />} />
       <Route path="/reservations" element={<Reservations />} />
+      <Route path="/reservations/new/:carId" element={<NewReservationForm />} />
       <Route path="/reservations/new" element={<NewReservationForm />} />
     </Routes>
   </Provider>

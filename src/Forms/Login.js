@@ -1,37 +1,46 @@
-import React, { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../redux/users/usersSlice';
 
 const Login = () => {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const dispatch = useDispatch();
 
   const handleChangeUsername = (event) => {
     setUsername(event.target.value);
   };
 
-  const handleChangeEmail = (event) => {
-    setEmail(event.target.value);
+  const isUserLogged = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || null;
+    if (user !== null) {
+      window.location.href = '/';
+    }
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const user = JSON.parse(localStorage.getItem('user'));
-      if (!user || user !== username) {
-        alert(`User ${username} not found`);
-        window.location.href = '/SingUp';
-      } else {
-        const response = await fetch(`api/v1/users/${username}`);
-        const data = await response.json();
-        if (data.ok) {
-          alert(`${username} - Logged in successfully`);
-          localStorage.setItem('user', JSON.stringify(username));
-        }
+  useEffect(isUserLogged, []);
+
+  const isUserExistInApi = async (username) => fetch(`http://127.0.0.1:3000/api/v1/users/${username}`)
+    .then((res) => {
+      if (res.status === 200) {
+        return res.json();
       }
-    } catch (error) {
-      console.log('error');
-    }
+      return false;
+    });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    isUserExistInApi(username).then((data) => {
+      if (data === false) {
+        console.log('user doeasnt exist!');
+      } else {
+        localStorage.setItem('user', JSON.stringify(data));
+        dispatch(loginUser({ data: username, isLogged: true }));
+        window.location.href = '/';
+      }
+    });
   };
 
   return (
@@ -42,11 +51,10 @@ const Login = () => {
         <input type="text" id="username" value={username} onChange={handleChangeUsername} />
       </label>
       <br />
-      <label htmlFor="email">
-        <p>Email:</p>
-        <input type="text" id="email" value={email} onChange={handleChangeEmail} />
-      </label>
-      <button type="submit">Login</button>
+      <button type="submit" className="submit-btn">Login</button>
+      <br />
+      <span><i>Don&apos;t have an account?</i></span>
+      <Link to="/signup">Sign up here</Link>
     </form>
   );
 };

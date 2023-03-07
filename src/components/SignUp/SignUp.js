@@ -1,61 +1,80 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { signUpUser } from '../../redux/users/usersSlice';
 import './SignUp.css';
 
 const SignUpForm = () => {
+  const dispatch = useDispatch();
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-
-  useEffect(() => {
-    const storedUsername = localStorage.getItem('username');
-    const storedEmail = localStorage.getItem('email');
-
-    if (storedUsername && storedEmail) {
-      setUsername(storedUsername);
-      setEmail(storedEmail);
-    }
-  }, []);
+  const [useremail, setUseremail] = useState('');
 
   const handleUsernameChange = (e) => {
-    const newUsername = e.target.value;
-    setUsername(newUsername);
-    localStorage.setItem('username', newUsername);
+    setUsername(e.target.value);
   };
 
-  const handleEmailChange = (e) => {
-    const newEmail = e.target.value;
-    setEmail(newEmail);
-    localStorage.setItem('email', newEmail);
+  const handleUseremailChange = (e) => {
+    setUseremail(e.target.value);
   };
+
+  const createUserAPI = async (username, useremail) => fetch('http://127.0.0.1:3000/api/v1/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name: username, email: useremail }),
+  }).then((response) => {
+    if (response.status === 200) {
+      return response.json();
+    }
+    return false;
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Submitted: ${username}, ${email}`);
+
+    // if (username.trim() === '') {
+    //   alert('Please enter a valid username.');
+    //   return;
+    // }
+    createUserAPI(username).then((userdata) => {
+      if (userdata !== false) {
+        dispatch(signUpUser({ data: userdata, isLogged: true }));
+        localStorage.setItem('user', JSON.stringify(userdata));
+        window.location.href = '/';
+      }
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">
-        Username
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={handleUsernameChange}
-        />
-      </label>
-
-      <label htmlFor="email">
-        Email
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-      </label>
-
-      <button type="submit" className="submit-btn">Submit</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">
+          Username
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </label>
+        <label htmlFor="useremail">
+          Email
+          <input
+            type="text"
+            id="useremail"
+            value={useremail}
+            onChange={handleUseremailChange}
+          />
+        </label>
+        <button type="submit" className="submit-btn">
+          Sign up
+        </button>
+        <br />
+        <span><i>Already have an account?</i></span>
+        <Link to="/signin"> Log in here</Link>
+      </form>
+    </>
   );
 };
 

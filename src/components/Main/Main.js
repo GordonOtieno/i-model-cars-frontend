@@ -1,21 +1,35 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { Link } from 'react-router-dom';
-import Carousel from 'react-bootstrap/Carousel';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import { getCarsThunk } from '../../redux/cars/carsSlice';
 import './Main.css';
+import isUserSigned from '../../helpers/auth';
 
 const Main = () => {
-  const [cars, setCars] = useState([]);
+  const dispatch = useDispatch();
+  const { cars = null, status = 'idle' } = useSelector((state) => state.cars);
   // Fetch data from the localhost api
+
+  const [carouselIndex, setcarouselIndex] = useState(0);
   useEffect(() => {
-    axios.get('http://127.0.0.1:3000/api/v1/cars')
-      .then((response) => {
-        setCars(response.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    if (!isUserSigned()) {
+      window.location.href = '/signin';
+    }
+    if (window.innerWidth <= 768) {
+      setcarouselIndex(1);
+    } else if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+      setcarouselIndex(2);
+    } else {
+      setcarouselIndex(3);
+    }
+    if (status === 'idle') {
+      dispatch(getCarsThunk());
+    }
+  }, [status, dispatch, window.innerWidth]);
 
   return (
     <section>
@@ -25,19 +39,19 @@ const Main = () => {
       </header>
 
       <Carousel className="cars-container" interval={null}>
-        {cars.reduce((acc, car, index) => {
-          if (index % 3 === 0) {
+        {cars && cars.reduce((acc, car, index) => {
+          if (index % carouselIndex === 0) {
             acc.push([]);
           }
           acc[acc.length - 1].push(car);
           return acc;
         }, []).map((carGroup) => (
           <Carousel.Item key={uuidv4()} className="cars">
-            <div className="d-flex justify-content-between">
+            <div className="d-flex">
               {carGroup.map((car) => (
-                <div key={car.id} className="w-33">
+                <div key={car.id}>
                   <Link to={`/details/${car.id}`}>
-                    <img src={car.images.dark} alt={car.name} style={{ height: '200px', width: '300px' }} />
+                    <img src={car.images[Object.keys(car.images)[0]]} alt={car.name} style={{ height: '200px', width: '300px' }} />
                   </Link>
                   <div className="car-info">
                     <h4>{car.name}</h4>
