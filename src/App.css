@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
 
+/* stylelint-disable no-descending-specificity */
 :root {
   --light: #fff;
   --dark: #000;
@@ -19,6 +20,12 @@
   padding: 0;
 }
 
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
 a {
   text-decoration: none;
   color: var(--light-dark);
@@ -33,7 +40,6 @@ input:not([type="file"]) {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
-  background: var(--transparent);
   letter-spacing: 1px;
   width: 100%;
 }
@@ -80,8 +86,9 @@ input:not([type="file"]) {
 
 #rsrv-page form input[type="text"],
 #rsrv-page form input[type="number"],
-#rsrv-page form input[type="date"] {
-  min-width: 300px;
+#rsrv-page form input[type="date"],
+#rsrv-page form select {
+  min-width: 100px;
   margin: 8px 0;
   padding: 5px 10px;
   border-radius: 15px;
@@ -92,12 +99,12 @@ input:not([type="file"]) {
   padding: 25px 0;
   font-family: var(--main-font);
   text-align: center;
-  background-color: var(--main-color);
+  background-color: #efefef;
 }
 
 #resevations-page h1 {
   margin: 45px 0;
-  color: #fcfcfc;
+  color: #a0a0a0;
 }
 
 #resevations-list {
@@ -107,18 +114,19 @@ input:not([type="file"]) {
 
 div.mycard {
   min-height: 100px;
-  min-width: 300px;
+  min-width: 240px;
   margin: 10px 0;
   padding: 15px 15px;
   padding-bottom: 35px;
   display: flex;
   justify-content: center;
-  border-radius: 25px;
+  border-radius: 5px;
   gap: 10px;
   position: relative;
   white-space: nowrap;
-  background-color: #ececec;
+  background-color: #f5f5f5;
   color: #2c2c2c;
+  box-shadow: 1px 1px 10px #c0c0c0;
 }
 
 div.mycard h2 {
@@ -148,11 +156,27 @@ div.mycard .myrow {
   #resevations-list {
     grid-template-columns: 50% 50%;
   }
+
+  #root {
+    grid-template-columns: 30% 70%;
+  }
+
+  .social-icons {
+    justify-content: space-between;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   #resevations-list {
     grid-template-columns: 33% 33% 33%;
+  }
+
+  #root {
+    grid-template-columns: 20% 80%;
+  }
+
+  div.mycard {
+    min-width: 300px;
   }
 }
 
@@ -189,10 +213,6 @@ button {
   color: white;
   font-family: inherit;
   margin-top: 1.5rem;
-}
-
-select {
-  background: var(--transparent);
 }
 
 .margin {
