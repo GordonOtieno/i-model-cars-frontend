@@ -63,7 +63,7 @@ function Details() {
               <span>
                 Type:
                 {' '}
-                {carDetails.type}
+                {carDetails.car_type}
               </span>
             </div>
             <div className="cars-cost">
