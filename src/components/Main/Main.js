@@ -57,7 +57,7 @@ const Main = () => {
                     <h4>{car.name}</h4>
                     <span>{car.description.split('', 50)}</span>
                   </div>
-                  <div className="social-icons">
+                  <div className="social-icon">
                     <div className="icon">
                       <FaTwitter />
                     </div>
