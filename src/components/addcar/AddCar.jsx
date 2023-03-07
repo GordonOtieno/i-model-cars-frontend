@@ -24,7 +24,7 @@ const AddCar = () => {
     if (!isUserSigned()) {
       navigate('/signin');
     }
-  }, []);
+  }, [navigate]);
   const canBeSaved = [name, make, desc, cost, speed].every(Boolean);
   const data = {
     images: {

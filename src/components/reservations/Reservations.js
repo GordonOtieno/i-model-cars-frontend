@@ -18,7 +18,7 @@ export default function Reservations() {
     }
     dispatch((getCarsThunk()));
     dispatch((getReservationsThunk()));
-  }, [dispatch]);
+  }, [dispatch, navigate]);
   function getCar(carId) {
     return cars.find((car) => car.id === carId);
   }

@@ -25,7 +25,7 @@ function RemoveCar() {
     if (!isUserSigned()) {
       navigate('/signin');
     }
-  }, []);
+  }, [navigate]);
 
   const deleteRequestHandler = (carId, carName) => {
     fetch(`${baseURL}/cars/${carId}`, {

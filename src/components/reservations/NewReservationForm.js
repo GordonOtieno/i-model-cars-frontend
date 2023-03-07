@@ -15,7 +15,7 @@ export default function NewReservationForm() {
       navigate('/signin');
     }
     dispatch(getCarsThunk());
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   const { cars = null } = useSelector((state) => state.cars);
 
