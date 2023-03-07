@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { baseURL } from '../../helpers/api';
 import Modal from '../addcar/resusable/modal/Modal';
+import isUserSigned from '../../helpers/auth';
 
 import styles from './RemoveCar.module.css';
 
@@ -18,6 +19,10 @@ function RemoveCar() {
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error));
+
+    if (!isUserSigned()) {
+      window.location.href = '/signin';
+    }
   }, []);
 
   const deleteRequestHandler = (carId, carName) => {
@@ -40,6 +45,7 @@ function RemoveCar() {
             message: `Yaaaay! You successfully deleted ${carName}`,
             type: 'success',
           });
+          window.location.reload();
         } else {
           console.error('Error deleting resource');
         }
@@ -57,7 +63,7 @@ function RemoveCar() {
   return (
     <>
       <div className={`${styles.deletecarContainer} flex flex-column center`}>
-        <h2 className="detete-header hero">Delet Items</h2>
+        <h2 className="detete-header hero">Delete Car</h2>
         <div className="grid gap">
           {data.map((car) => (
             <div key={car.id}>

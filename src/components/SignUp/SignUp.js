@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { signUpUser } from '../../redux/users/usersSlice';
+import { baseURL } from '../../helpers/api';
 import './SignUp.css';
 
 const SignUpForm = () => {
@@ -17,7 +18,7 @@ const SignUpForm = () => {
     setUseremail(e.target.value);
   };
 
-  const createUserAPI = async (username, useremail) => fetch('http://127.0.0.1:3000/api/v1/users', {
+  const createUserAPI = async (username, useremail) => fetch(`${baseURL}/users`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

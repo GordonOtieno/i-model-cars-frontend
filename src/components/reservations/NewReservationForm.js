@@ -13,14 +13,14 @@ export default function NewReservationForm() {
   useEffect(() => {
     if (!isUserSigned()) {
       window.location.href = '/signin';
+    } else {
+      // Extract user details
+      const { id: userId } = JSON.parse(localStorage.getItem('user'));
     }
     dispatch(getCarsThunk());
   }, [dispatch]);
 
   const { cars = null } = useSelector((state) => state.cars);
-
-  // Extract user details
-  const { id: userId } = JSON.parse(localStorage.getItem('user'));
 
   // Extract the car id from the URL
   const { carId } = useParams();

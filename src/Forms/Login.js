@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/users/usersSlice';
+import { baseURL } from '../helpers/api';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -22,7 +23,7 @@ const Login = () => {
 
   useEffect(isUserLogged, []);
 
-  const isUserExistInApi = async (username) => fetch(`http://127.0.0.1:3000/api/v1/users/${username}`)
+  const isUserExistInApi = async (username) => fetch(`${baseURL}/users/${username}`)
     .then((res) => {
       if (res.status === 200) {
         return res.json();

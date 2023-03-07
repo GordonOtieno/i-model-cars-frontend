@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseURL } from '../../helpers/api';
 import InputChange from './hooks/InputChange';
@@ -6,6 +6,7 @@ import UseFileUpload from './hooks/useFileUpload';
 import Container from './resusable/container/Container';
 import FileUpload from './resusable/inputFields/FileUpload';
 import Input from './resusable/inputFields/Input';
+import isUserSigned from '../../helpers/auth';
 
 const AddCar = () => {
   const [name, handleNameChange] = InputChange('');
@@ -19,6 +20,11 @@ const AddCar = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!isUserSigned()) {
+      window.location.href = '/signin';
+    }
+  }, []);
   const canBeSaved = [name, make, desc, cost, speed].every(Boolean);
   const data = {
     images: {
