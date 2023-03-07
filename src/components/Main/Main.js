@@ -28,7 +28,7 @@ const Main = () => {
     if (status === 'idle') {
       dispatch(getCarsThunk());
     }
-  }, [status, dispatch]);
+  }, [status, dispatch, navigate]);
 
   return (
     <section>
