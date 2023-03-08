@@ -152,34 +152,6 @@ div.mycard .myrow {
   gap: 5px;
 }
 
-@media only screen and (min-width: 768px) {
-  #resevations-list {
-    grid-template-columns: 50% 50%;
-  }
-
-  #root {
-    grid-template-columns: 30% 70%;
-  }
-
-  .social-icons {
-    justify-content: space-between;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #resevations-list {
-    grid-template-columns: 33% 33% 33%;
-  }
-
-  #root {
-    grid-template-columns: 20% 80%;
-  }
-
-  div.mycard {
-    min-width: 300px;
-  }
-}
-
 .form-container {
   background: var(--light);
   backdrop-filter: blur(3rem);
@@ -237,4 +209,42 @@ button {
 
 .detete-header {
   padding-top: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  #resevations-list {
+    grid-template-columns: 50% 50%;
+  }
+
+  #root {
+    grid-template-columns: 30% 70%;
+  }
+
+  .social-icons {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #resevations-list {
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  #root {
+    grid-template-columns: 20% 80%;
+  }
+
+  div.mycard {
+    min-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem 10px;
+  }
+
+  .gap {
+    gap: 10px;
+  }
 }
