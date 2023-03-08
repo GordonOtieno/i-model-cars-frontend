@@ -1,288 +1,132 @@
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
+- [📖 About the Project](#[project])
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Setup](#setup)
+  - [Available Scripts](#available-scripts)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
+- [🙏 Acknowledgements](#acknowledgments)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# I Model Cars
 
-> Describe your project in 1 or 2 sentences.
+**I Model Cars** is a car booking service app where you can book a car for a test drive, you can pick a car from the catalogue, pick a date and city and your appointment will be set up. The app was built with Ruby on Rails and React.JS, the is split into a backend and frontend part, this repository is for the frontend part to check the backend please head to this [repository](https://github.com/GordonOtieno/i-model-cars-backend)
 
-**[your_project__name]** is a...
+## Built With
 
-## 🛠 Built With <a name="built-with"></a>
+### Tech Stack 
 
-### Tech Stack <a name="tech-stack"></a>
+<ul>
+  <li><a href="https://www.ruby-lang.org/en/news/2022/11/24/ruby-3-1-3-released/">Ruby 3.1</a></li>
+  <li><a href="https://rubyonrails.org/">Ruby on Rails 7</a></li>
+  <li><a href="https://www.postgresql.org/">PostgreSQL 15</a></li>
+  <li><a href="https://reactjs.org/">React</a></li>
+  <li><a href="https://redux.js.org/">Redux</a></li>
+  <li><a href="https://reactrouter.com/en/main">React Router</a></li>
+</ul>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+## Live Demo 
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
+- [Live Demo Link](https://wondrous-gumption-278ae4.netlify.app/)
+- [Link to Backend Repo.](https://github.com/GordonOtieno/i-model-cars-backend)
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
+### Key Features
 
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
+- Add cars to the catalogue
+- Book a car from the catalogue
+- Access all your bookings
 
-<!-- Features -->
+## Getting Started 
 
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
-
-To get a local copy up and running, follow these steps.
+> To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+  - <a href="https://www.ruby-lang.org/en/news/2022/11/24/ruby-3-1-3-released/">Ruby</a>
+  - <a href="https://rubyonrails.org/">Ruby on Rails</a>
+  - <a href="https://www.npmjs.com/">npm</a>
+  - any code editor
 
 ### Setup
 
-Clone this repository to your desired folder:
+To setup the project follow the steps:
 
-<!--
-Example commands:
+1. Clone this project using Git Bash: 
+    ``` 
+    git clone https://github.com/GordonOtieno/i-model-cars-frontend
+    ```
+  
+2. Inside the project directory, install the project's dependencies
+    ```
+    npm install
+    ``` 
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+3. Make sure to follow the instructions on the backend repository to run backend serve before starting the frontend server
 
-### Install
 
-Install this project with:
+### Available Scripts
 
-<!--
-Example command:
+In the project directory, you can run:
 
-```sh
-  cd my-project
-  gem install
-```
---->
+- ```
+  npm start
+  ```
+  Runs the app server
 
-### Usage
+- ```
+  npm test
+  ```
+  Launches the test runner.
 
-To run the project, execute the following command:
+## Authors
 
-<!--
-Example command:
+👤 **Amine**
 
-```sh
-  rails server
-```
---->
+- GitHub: [@ouasamine](https://github.com/ouasamine)
+- Twitter: [@ouass_amine](https://twitter.com/ouass_amine)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/amine-ouassef)
 
-### Run tests
+👤 **Okechukwu Muokwugwo**
 
-To run tests, run the following command:
+- GitHub: [@githubhandle](https://github.com/Okechukwu-muokwugwo)
+- Twitter: [@twitterhandle](https://twitter.com/excel4eva)
+- LinkedIn: [LinkedIn](LinkedIn.com/in/okeimuokwugwo)
 
-<!--
-Example command:
+👤 **Gordon Otieno**
 
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+- GitHub: [@GordonOtieno](https://github.com/GordonOtieno)
+- Twitter: [@GordonOtieno](https://twitter.com/GordonO34459259/twitterhandle)
+- LinkedIn: [GordonOtieno](https://www.linkedin.com/in/gordonotieno/)
 
-### Deployment
+## Future Feature
 
-You can deploy this project using:
+- Build a dashboard for admins
+- Implement full user authentication
 
-<!--
-Example:
-
-```sh
-
-```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
+## Contributing 
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Show your support <a name="support"></a>
 
-<!-- SUPPORT -->
+If you like this project give it a star!
 
-## ⭐️ Show your support <a name="support"></a>
+## Acknowledgments 
 
-> Write a message to encourage readers to support your project
+- Microverse 
+- Credit goes to Murat Korkmaz whose [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) was user in this project.
 
-If you like this project...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
+## License 
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>

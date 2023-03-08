@@ -1,0 +1,50 @@
+body {
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.cars-image {
+  width: 50%;
+}
+
+.cars-image img {
+  width: 100%;
+}
+
+.car-props {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+.car-props > :nth-child(even) {
+  background-color: lightgray;
+}
+
+.cars-name {
+  text-align: right;
+}
+
+.cars-description {
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
+.configure {
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.configure button {
+  border-radius: 40px;
+  background-color: #88e62a;
+}
