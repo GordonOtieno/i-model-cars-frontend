@@ -13,11 +13,16 @@ export default function Reservations() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
+    let userId;
     if (!isUserSigned()) {
       navigate('/signin');
+    } else {
+    // Extract user details
+      const { id } = JSON.parse(localStorage.getItem('user'));
+      userId = id;
     }
     dispatch((getCarsThunk()));
-    dispatch((getReservationsThunk()));
+    dispatch((getReservationsThunk(userId)));
   }, [dispatch, navigate]);
   function getCar(carId) {
     return cars.find((car) => car.id === carId);

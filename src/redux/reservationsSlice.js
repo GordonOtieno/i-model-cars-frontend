@@ -3,8 +3,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getReservationsAPI } from '../helpers/api';
 
 export const getReservationsThunk = createAsyncThunk('reservations/fetchAll',
-  async () => {
-    const response = await getReservationsAPI(1)
+  async (userId) => {
+    const response = await getReservationsAPI(userId)
       .then((res) => res.json())
       .then((res) => res);
     return response;
