@@ -7,7 +7,7 @@ import calendarIcon from '../../img/calendar_icon.png';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
 import isUserSigned from '../../helpers/auth';
 
-export default function Reservations() {
+const Reservations = () => {
   const { reservations } = useSelector((state) => state.reservations);
   const { cars = null } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
@@ -24,9 +24,7 @@ export default function Reservations() {
     dispatch((getCarsThunk()));
     dispatch((getReservationsThunk(userId)));
   }, [dispatch, navigate]);
-  function getCar(carId) {
-    return cars.find((car) => car.id === carId);
-  }
+  const getCar = (carId) => cars.find((car) => car.id === carId);
   return (
     <main id="resevations-page">
       <h1>Your Reservations</h1>
@@ -56,4 +54,6 @@ export default function Reservations() {
       </section>
     </main>
   );
-}
+};
+
+export default Reservations;

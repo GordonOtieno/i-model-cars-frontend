@@ -7,7 +7,7 @@ import { BiLeftArrow } from 'react-icons/bi';
 import './details.css';
 import { baseURL } from '../../helpers/api';
 
-function Details() {
+const Details = () => {
   const { id } = useParams();
   const [carDetails, setCarDetails] = useState(null);
 
@@ -100,6 +100,6 @@ function Details() {
       )}
     </section>
   );
-}
+};
 
 export default Details;

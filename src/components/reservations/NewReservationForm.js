@@ -5,7 +5,7 @@ import { createReservationAPI } from '../../helpers/api';
 import isUserSigned from '../../helpers/auth';
 import { getCarsThunk } from '../../redux/cars/carsSlice';
 
-export default function NewReservationForm() {
+const NewReservationForm = () => {
   // eslint-disable-next-line react/prop-types, no-unused-vars
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -71,4 +71,6 @@ export default function NewReservationForm() {
       <span className={msg.type}>{ msg.text }</span>
     </div>
   );
-}
+};
+
+export default NewReservationForm;

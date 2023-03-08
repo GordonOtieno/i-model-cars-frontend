@@ -6,7 +6,7 @@ import isUserSigned from '../../helpers/auth';
 
 import styles from './RemoveCar.module.css';
 
-function RemoveCar() {
+const RemoveCar = () => {
   const [showModal, setShowModal] = useState({
     alert: false,
     message: '',
@@ -91,6 +91,6 @@ function RemoveCar() {
       )}
     </>
   );
-}
+};
 
 export default RemoveCar;

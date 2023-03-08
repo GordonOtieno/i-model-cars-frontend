@@ -4,7 +4,7 @@ import styles from './Modal.module.css';
 import error from '../../../../assets/error.jpg';
 import success from '../../../../assets/success.jpg';
 
-function Modal({ message, onClose, type }) {
+const Modal = ({ message, onClose, type }) => {
   const handleKeyDown = (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
       onClose();
@@ -26,7 +26,7 @@ function Modal({ message, onClose, type }) {
       </div>
     </>
   );
-}
+};
 Modal.propTypes = {
   message: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,

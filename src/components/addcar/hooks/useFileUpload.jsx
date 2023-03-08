@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function UseFileUpload() {
+const UseFileUpload = () => {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
 
@@ -17,6 +17,6 @@ function UseFileUpload() {
   };
 
   return { file, preview, handleFileChange };
-}
+};
 
 export default UseFileUpload;
