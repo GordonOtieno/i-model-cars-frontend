@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { TfiArrowCircleRight } from 'react-icons/tfi';
 import { BiLeftArrow } from 'react-icons/bi';
@@ -10,6 +10,7 @@ import { baseURL } from '../../helpers/api';
 const Details = () => {
   const { id } = useParams();
   const [carDetails, setCarDetails] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCarDetails = async () => {
@@ -25,6 +26,10 @@ const Details = () => {
     fetchCarDetails();
   }, [id]);
 
+  const navgiateHome = () => {
+    navigate('/');
+  };
+
   return (
     <section>
       {carDetails && (
@@ -36,7 +41,7 @@ const Details = () => {
             />
             <p className="cars-description">{carDetails.description}</p>
             <div className="configure">
-              <button type="button">
+              <button type="button" onClick={navgiateHome}>
                 <BiLeftArrow />
               </button>
             </div>

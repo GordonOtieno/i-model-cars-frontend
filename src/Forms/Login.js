@@ -7,7 +7,6 @@ import { baseURL } from '../helpers/api';
 
 const Login = () => {
   const [username, setUsername] = useState('');
-  // const [loggedIn, setLoggedIn] = useState(false);
   const dispatch = useDispatch();
 
   const handleChangeUsername = (event) => {
