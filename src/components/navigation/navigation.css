@@ -6,6 +6,7 @@
   align-items: center;
   background-color: #fff;
   padding: 10px;
+  padding-bottom: 100px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,7 +22,6 @@
 
 .sidebar-content {
   font-size: 0.9rem;
-  margin-bottom: 20px;
   align-self: stretch;
 }
 
@@ -34,7 +34,7 @@
 .sidebar-content li {
   list-style: none;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .sidebar-content li:hover {
@@ -49,7 +49,7 @@
 
 .social-icons {
   position: absolute;
-  bottom: 65px;
+  bottom: 55px;
   display: flex;
   gap: 15px;
   align-items: center;

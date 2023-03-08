@@ -33,11 +33,6 @@ const SignUpForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // if (username.trim() === '') {
-    //   alert('Please enter a valid username.');
-    //   return;
-    // }
     createUserAPI(username, useremail).then((userdata) => {
       if (userdata !== false) {
         dispatch(signUpUser({ data: userdata, isLogged: true }));
